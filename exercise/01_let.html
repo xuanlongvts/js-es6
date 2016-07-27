@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+<h1>let</h1>
+<p><b>Ví dụ:</b> Viết chương trình hoán đổi giá trị của hai biến a và b nếu giá trị của a nhỏ hơn giá trị của b.</p>
+<script language="javascript">
+    if (true){
+        //var domain = "google.com"; // Right
+        let domain = "google.com";  // Error: domain is not defined
+    }
+    console.log(domain);
+
+    var a = 12;
+    var b = 20;
+    if(a < b){
+        var tmp = a;
+        a = b;
+        b = tmp;
+    }
+    console.log('a: ' + a);
+    console.log('b: ' + b);
+    console.log('tmp: ' + tmp);
+</script>
+</body>
+</html>
