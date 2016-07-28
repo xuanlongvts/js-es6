@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow function</title>
+</head>
+<body>
+<h1>Arrow function</h1>
+<script language="javascript">
+    var hello = (name, message) => {
+        console.log('Chào: ' + name + ', bạn là ' + message);
+    };
+    hello('Xuân Long','IT Manager');
+
+    function hello1(name, message) {
+        console.log('Chào: ' + name + ', bạn là ' + message);
+    }
+    hello1('Nong Nờ', 'hahaha');
+
+    // Trường hợp trong thân của hàm chỉ có một lệnh duy nhất thì bạn có thể sử dụng theo ví dụ dưới đây.
+    var hello2 = (name, message) => console.log('Chào: ' + name + ', bạn là ' + message);
+    hello2('Xuân Nong', 'phản động');
+
+    // Trường hợp truyền vào chỉ một tham số thì bạn có thể bỏ cặp ().
+    var hello3 = message => console.log(message);
+    hello3('ES6 Zui quá');
+
+    // Trường hợp không có tham số truyền vào thì bạn sử dụng cặp () rỗng.
+    var hello4 = () => console.log('Hello world');
+    hello4();
+</script>
+</body>
+</html>

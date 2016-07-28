@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrow function</title>
+</head>
+<body>
+<h1>Arrow function</h1>
+<script language="JavaScript">
+    var domain = ["freetuts.net", 'qa.freetuts.net', 'demo.freetuts.net'];
+    domain.map(function (val, key) {
+        console.log(val.toUpperCase());
+        //domain[key] = val.toUpperCase();
+    });
+    console.log(domain);
+
+    setTimeout(()=>{
+        console.log('3 giay da troi qua');
+    }, 3000);
+
+    setInterval(()=>{
+        console.log('cong don 2 giay');
+    }, 2000);
+</script>
+</body>
+</html>

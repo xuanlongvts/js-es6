@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+<h1>let</h1>
+<p>Block Scoped</p>
+<script language="javascript">
+    if (true){
+        //var domain = "google.com"; // Right
+        let domain = "google.com";  // Error: domain is not defined
+    }
+    console.log(domain);
+</script>
+</body>
+</html>
