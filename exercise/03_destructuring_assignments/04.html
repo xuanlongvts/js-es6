@@ -15,12 +15,17 @@
     console.log(main1);
     console.log(sub1);
 
+    // Bạn có thể sử dụng function return về array hoặc object để gán vào thay vì gán một giá trị trực tiếp như vậy.
     var domains = () => {
         return [
                 'abc.com',
                 'xyz.vn'
         ];
-    }
+    };
+    let [main, sub] = domains();
+    console.log('=====');
+    console.log(main);
+    console.log(sub);
 </script>
 </body>
 </html>
