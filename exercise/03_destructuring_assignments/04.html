@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+<h1>Destructuring Assignment</h1>
+<script language="javascript">
+    // Nếu phần tử không tồn tại thì sẽ bị undefined.
+    let domain = ["google.com"];
+
+    // Để tránh lỗi undefined thì bạn có thể gán giá trị mặc định cho nó.
+    let [main1, sub1 = "facebook.com"] = domain;
+    console.log(main1);
+    console.log(sub1);
+
+    var domains = () => {
+        return [
+                'abc.com',
+                'xyz.vn'
+        ];
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+<h1>Destructuring Assignment</h1>
+<script language="javascript">
+    let date = [28, 7, 2016];
+    let [d, m, y] = date;
+
+    console.log('Day ' + d);
+    console.log('Month ' + m);
+    console.log('Year ' + y);
+
+    // Nếu bạn muốn lấy một phần tử thôi thì hãy bỏ trống các phần tử không muốn lấy.
+    let [,,nam] = date;
+    console.log('Năm: ' + nam);
+</script>
+</body>
+</html>

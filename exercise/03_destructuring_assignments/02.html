@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Destructuring Assignment</title>
+</head>
+<body>
+<h1>Destructuring Assignment</h1>
+<script language="javascript">
+    let date = {
+        day: 28,
+        month: 7,
+        year: 2016
+    };
+
+    let {day: d, month: m, year: y} = date;
+
+    console.log('Day: ' + d);
+    console.log('Month: ' + m);
+    console.log('Year: ' + y);
+
+    // Với trường hợp này thì bạn có thể lấy một phần tử bất kì chứ không bắt buộc theo thứ tự như bên mảng.
+
+    let { year: nam } = date;
+    console.log('Năm: ' + nam);
+</script>
+</body>
+</html>
