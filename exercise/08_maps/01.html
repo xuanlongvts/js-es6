@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maps</title>
+</head>
+<body>
+<h1>Maps</h1>
+<script language="javascript">
+    let map = new Map([
+            ["Name", "Nong Nờ"],
+            ["Email", "xuanlongvts@gmail.com"],
+            ["Website", "facebook.com"],
+    ]);
+    console.log(map);
+
+    // Nếu thêm trùng Key thì key sau sẽ overwrite.
+    map.set('Name', 'Xuân Long');
+    console.log('Thêm phần tử');
+    console.log(map);
+
+    console.log('===============');
+    map.set('Address', 'Sài Gòn');
+    console.log(map);
+
+    console.log('Xóa phần tử');
+    map.delete("Name");
+    console.log(map);
+
+    console.log('Kiểm tra phần tử có tồn tại hay không');
+    console.log(map.has('Name'));
+    console.log(map.has('Address'));
+
+    console.log('Đếm tổng số phần từ');
+    console.log(map.size);
+
+    console.log('Xóa tất cả các phần tử');
+    map.clear();
+    console.log(map.size);
+</script>
+</body>
+</html>

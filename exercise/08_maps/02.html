@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maps</title>
+</head>
+<body>
+<h1>Maps</h1>
+<p>Key bạn có thể là một string, number, const hay thậm chí là một NaN.</p>
+<script language="javascript">
+    let map = new Map();
+
+    const KEY1 = {};
+    map.set(KEY1, 'Nong Nờ');
+    console.log(map.get(KEY1));
+
+    const KEY2 = {};
+    map.set(KEY2, 'facebook.com');
+    console.log(map.get(KEY2));
+
+    // Key là một NaN
+    map.set(NaN, 'google.com');
+    console.log(map.get(NaN));
+</script>
+</body>
+</html>

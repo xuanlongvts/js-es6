@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maps</title>
+</head>
+<body>
+<h1>Maps</h1>
+<p>Mapping và Filtering</p>
+<script language="javascript">
+    let map = new Map()
+            .set(1,'a')
+            .set(2,'b')
+            .set(3,'c')
+            .set(4,'d')
+            .set(5,'e');
+    let map1 = new Map(
+            [...map].filter(
+                    ([key, val]) => key % 2 == 0
+            )
+    );
+
+    console.log(map1);
+</script>
+</body>
+</html>
