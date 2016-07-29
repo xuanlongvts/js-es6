@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set</title>
+</head>
+<body>
+<h1>set</h1>
+<p>Mapping là một hàm được tích hợp sẵn trong Array với chức năng là thiết lập giá trị cho phần tử trong môi lần lặp.</p>
+<p>Filtering cũng được tích hợp sẵn trong Array, chức năng của hàm này là trả về true thì phần tử được chọn, trả về false thì phần tử không được chọn.</p>
+<script language="javascript">
+    let set = new Set([1,2,3,4,5]);
+    let arr = [...set].map(function (x) {
+        return x * 5;
+    });
+    console.log(set);
+    console.log(arr);
+
+    let arrFilter = [...set].filter(function (x) {
+        return (x % 2) == 0;
+    });
+    console.log(arrFilter);
+</script>
+</body>
+</html>

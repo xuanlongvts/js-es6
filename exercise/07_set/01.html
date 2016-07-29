@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set</title>
+</head>
+<body>
+<h1>set</h1>
+<script language="javascript">
+    var numbers = new Set([1,2,3,4]);
+    console.log('First: ');
+    console.log(numbers);
+
+    numbers.add(5);
+    console.log('Add element: ');
+    console.log(numbers);
+
+    numbers.delete(2);
+    console.log('Remove element');
+    console.log(numbers);
+
+    console.log('Kiem tra phan tu ton tai');
+    console.log(numbers.has(1)); // true
+    console.log(numbers.has(2)); // false
+
+    console.log('Xoa toan bo phan tu');
+    numbers.clear();
+    console.log(numbers);
+</script>
+</body>
+</html>
