@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rest parameters</title>
+</head>
+<body>
+<h1>Rest parameters</h1>
+<script language="JavaScript">
+    let domainList = (main, sub, ...other) => {
+        console.log('Main: '+ main);
+        console.log('Sub: '+ sub);
+        console.log('Other: ' );
+        console.log(other);
+        console.log('==========');
+        console.log('Length: '+ other.length);
+        console.log(other[0]);
+        console.log(other[1]);
+    };
+    domainList('abc.com', 'google.com.vn', 'facebook.com', 'mac.com');
+
+
+    // Trường hợp tham số truyền vào vừa đủ thì Rest Parameter sẽ có giá trị là một mảng rỗng
+    console.log('================================================');
+    domainList('Le', 'Long');
+</script>
+</body>
+</html>

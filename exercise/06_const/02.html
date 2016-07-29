@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>const</title>
+</head>
+<body>
+<h1>const</h1>
+<script language="javascript">
+    {
+        const domain = 'google.com';
+        console.log(domain);
+    }
+    {
+        // console.log(domain); // error domain is not defined
+    }
+
+    // Const trong vòng lặp
+    console.log('==================');
+    var domains = [
+            'google.com',
+            'facebook.com',
+            'mac.com'
+    ];
+    for(let domain of domains){
+        const mess = "Domain: " + domain;
+        console.log(mess);
+    };
+</script>
+</body>
+</html>
