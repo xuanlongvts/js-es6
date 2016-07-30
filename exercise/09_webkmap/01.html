@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeakMap</title>
+</head>
+<body>
+<h1>WeakMap</h1>
+<p>
+    WeakMap là một loại kiểu dữ liệu giống như Map vậy, nghĩa là sẽ tồn tại hai tham số key => value cho mỗi phần tử. Tuy nhiên với WeakMap thì key truyền vào phải là một biến và biến này phải là một Object (class, function, object), con với Map thì bạn có thể thiết lập key là chuỗi, number, object đều được.
+</p>
+<script language="javascript">
+    var weak = new WeakMap();
+
+    var key1 = {};
+    var key2 = {};
+    weak.set(key1, 'Giá trị 01');
+    weak.set(key2, 'Giá trị 02');
+
+    console.log(weak.get(key1));
+    console.log(weak.get(key2));
+
+    console.log(weak);
+
+    var other_key = {};
+    console.log(weak.has(key1));
+    console.log(weak.has(other_key));
+
+    weak.delete(key1);
+    console.log(weak.get(key1));
+</script>
+</body>
+</html>

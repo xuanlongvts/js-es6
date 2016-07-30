@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WeakSet</title>
+</head>
+<body>
+<h1>WeakSet</h1>
+<p>
+    WeakSet có thể được coi là một phiên bản tương tự như Set, tuy nhiên với WeakSet thì dữ liệu truyền vào luôn phải là một đối tượng (object, class, function) và bạn phải tạo một giá trị (key) trước khi lưu vào, điều này khác hoàn toàn với Set là Set có thể lưu trữ mọi dữ liệu kể cả number và string.
+</p>
+<script language="javascript">
+    var weak = new WeakSet();
+
+    var key1 = {
+        name: 'Google'
+    };
+    var key2 = {
+        website: 'google.com'
+    };
+
+    weak.add(key1);
+    weak.add(key2);
+
+    var other_key = {};
+    console.log(weak.has(key1));
+    console.log(weak.has(other_key));
+    console.log(weak);
+
+    weak.delete(key1);
+    console.log(weak);
+</script>
+</body>
+</html>
