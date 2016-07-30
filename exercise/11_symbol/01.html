@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Symbol</title>
+</head>
+<body>
+<h1>Symbol</h1>
+<p>
+    Trong ES6 xuất hiện thêm một kiểu dữ liệu Symbol, đây là kiểu dữ liệu dạng primitive type, nó sẽ tạo ra các ký tự duy nhất (unique) và không trả về một chuỗi mà nó chỉ là một dạng được gọi như một function, vì vậy bạn sẽ không thể thấy được ký tự nó generate là gì.
+</p>
+<p>
+    Nếu bạn tạo ra nhiều Symbol thì các symbols đó sẽ không bao giờ giống nhau, vì vậy chúng ta có thể tận dụng đối tượng này để tạo các key trong Object hoặc Map.
+</p>
+<script language="javascript">
+    let symbol1 = Symbol();
+    let symbol2 = Symbol();
+
+    console.log(symbol1 === symbol2);
+    console.log(typeof symbol1);
+
+    const MY_KEY = Symbol();
+    let obj = {
+        [MY_KEY]: 123
+    };
+    console.log('==================');
+    console.log(MY_KEY);
+    console.log(obj);
+
+    console.log('==================');
+    let map = new Map();
+    map.set(MY_KEY, 'google.com');
+    console.log([...map]);
+</script>
+</body>
+</html>

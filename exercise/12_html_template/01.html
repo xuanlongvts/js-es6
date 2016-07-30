@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Html template</title>
+</head>
+<body>
+<h1>Html template</h1>
+<script language="JavaScript">
+    var website = 'http://google.com/';
+    let temp = `Chào mừng bạn đến với ${website}`;
+    console.log(temp);
+
+    var domains = [
+        'facebook.com',
+        'google.com',
+        'apple.com'
+    ];
+    console.log('======================');
+    domains.map(function (domain, key) {
+        console.log(`<h4>${key}: ${domain}</h4>`);
+    })
+
+    var domains2 = [
+        {
+            domain: 'google.com',
+            author: 'Nong nờ'
+        },
+        {
+            domain: 'facebook.com',
+            author: 'Long lờ'
+        }
+    ];
+
+    domains2.map(function (domain, key) {
+        var tmpl = `
+            <div>
+                <h1>${domain.domain}</h1>
+                <h1>${domain.author}</h1>
+            </div>
+        `;
+        console.log(tmpl);
+    })
+</script>
+</body>
+</html>
