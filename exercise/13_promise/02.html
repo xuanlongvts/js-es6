@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<h1>Promise</h1>
+<script language="javascript">
+    var prom = new Promise(function (resolve, reject){
+        //resolve('Thành công nè!');
+        reject('Reject nè!');
+    });
+
+    prom
+            .then(
+                    function (mes) {
+                        console.log('111');
+                        console.log(mess);
+                    },
+                    function (mess) {
+                        console.log('222');
+                        console.log(mess);
+                    }
+            )
+            .catch(function (mess) {
+                console.log('Catch!');
+                console.log(mess);
+            });
+    console.log('==============');
+</script>
+</body>
+</html>

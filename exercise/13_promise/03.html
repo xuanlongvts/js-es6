@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<h1>Promise</h1>
+<p>
+    Pending là trạng thái khi bạn khởi tạo một Promise nhưng chưa thiết lập kết quả cho nó, tức là chưa sử dụng resolve và reject.
+</p>
+<p>
+    Fulfilled còn được gọi là resolved, đây là trạng thái của Promise đã thành công, trạng thái này xảy ra khi bạn sử dụng resolve.
+</p>
+<script language="JavaScript">
+    var proise = new Promise(function (resolve, reject) {
+
+    });
+    console.log(proise);
+
+    var promise1 = new Promise(function (resolve, reject) {
+        resolve();
+    });
+    console.log(promise1);
+</script>
+</body>
+</html>

@@ -6,8 +6,37 @@
 </head>
 <body>
 <h1>Promise</h1>
+<p>
+    Vậy hai hàm callback trong then chỉ xảy ra một trong hai mà thôi, điều này tương ứng ở Promise sẽ khai báo một là Resolve và hai là Reject, nếu khai báo cả hai thì nó chỉ có tác dụng với khai báo đầu tiên.
+</p>
 <script language="JavaScript">
+    var promise = new Promise(function (resolve, reject) {
+        //resolve('Thành công');
+        reject('Lỗi');
+    });
+    promise.then(
+            function (succ) {
+                console.log(succ);
+            },
+            function (err) {
+                console.log(err);
+            }
+    );
 
+    var prom = new Promise(function (resolve, reject) {
+        reject('Reject nè!');
+    });
+    prom
+            .then(
+                    function (mess) {
+                        console.log('Thông báo nè');
+                        console.log(mess);
+                    }
+            )
+            .catch(function (mess) {
+                console.log('Vào hàm Catch');
+                console.log(mess);
+            });
 </script>
 </body>
 </html>
