@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<h1>Promise</h1>
+<p>
+    <b>Khi sử dụng thenable liên tiếp thì kết quả return của phương thức then() hiện tại sẽ quyết định trạng thái của phương thức  then() tiếp theo. Ví dụ then() phía trên return về một Promise Rejected thì then() phía dưới sẽ nhận một trang thái Rejected.</b>
+</p>
+<p>
+    <img src="thenable-lien-tiep-trong-promise-3.png"  />
+</p>
+<p>
+    Trong hình này đường màu xanh mô tả cho Async Promise return về một Fulfilled và màu tím mô tả cho Asycn Promise return về một Rejected.
+</p>
+<script language="javascript">
+    /*
+    asyncPromise1()
+            .then(function () {
+                return asyncPromise2();
+            })
+            .then(function () {
+                return asyncPromise3();
+            })
+            .catch(function (err) {
+                return asyncRecover1();
+            })
+            .then(function () {
+                    return asyncPromise4();
+                },
+                    function (err) {
+                        return asyncRecovery2();
+                    }
+            )
+            .catch(function (err) {
+                console.log('Đừng lo lắng gì cả :)');
+            })
+            .then(function () {
+                console.log('Mọi thứ đã xong!');
+            });
+    */
+
+    var promise = new Promise(function (resolve, reject) {
+        reject();
+    });
+    promise
+            .then(function () {
+                return new Promise(function (resolve, reject) {
+                    reject();
+                });
+            })
+            .then(function () {
+                console.log('Success!');
+            })
+            .catch(function () {
+                console.log('Error!')
+            });
+</script>
+</body>
+</html>

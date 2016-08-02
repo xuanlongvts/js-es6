@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterator protocol</title>
+</head>
+<body>
+<h1>Iterator protocol</h1>
+<img src="iterators-trong-javascript-1.jpg" /><br /><br />
+<div>
+    Trong tấm hình mô phỏng ba tầng cấp như sau: <br /><br />
+
+    <b>Data consumers:</b> Các phương thức - hành động của Iterator, đây cũng chính là Iterator Protocol.
+    <b>Interface:</b> Interface là một lớp trung gian kế thừa tất cả các Data consummers, đây chính là Iterable. Và vì trong Javascript không tồn tại Interface nên ta sử dụng Symbol.iterator để chuyển đổi.
+    <b>Data Resources:</b> Các đối tượng dữ liệu trong Javascript muốn chuyenr sang Iterable.
+    <br /><br />
+    <b>Tóm lại:</b><br /><br />
+
+    Các đối tượng muốn sử dụng được Iterator Protocol thì phải thông qua Interface. Thông thường thì các đối tượng như array, collection đề đã có sẵn iterable.<br /><br />
+    Với phương thức next() thì bạn phải thực hiện thao tác chuyển đổi thông qua Symbol.iterator.
+</div>
+<script language="javascript">
+    let arr = ['a','b','c'];
+    var iterable = arr[Symbol.iterator]();
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+</script>
+</body>
+</html>

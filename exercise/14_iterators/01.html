@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterators</title>
+</head>
+<body>
+<h1>Iterators</h1>
+<script language="javascript">
+    let arr = ['a','b','c'];
+    var interator = arr[Symbol.iterator]();
+    console.log(interator.next());
+    console.log(interator.next());
+    console.log(interator.next());
+    console.log(interator.next());
+</script>
+</body>
+</html>

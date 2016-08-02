@@ -18,6 +18,16 @@
 <p>
     <b>Trường hợp 2:</b> Bạn sử dụng catch để bắt lỗi, lúc này chỉ có phương thức catch() là hoạt động.
 </p>
+
+<p>
+    Ôi tới đây thì mình đã mắc một sai lầm nghiêm trọng. Thật ra thì hai trường hợp kia chỉ là lý luận theo hướng mắt thấy tai nghe nên nó không đúng đâu các bạn nhé, vấn đề nằm ở câu chốt dưới này :)
+</p>
+
+<p>
+    <b>
+        Khi sử dụng thenable liên tiếp thì kết quả return của phương thức then() hiện tại sẽ quyết định trạng thái của phương thức  then() tiếp theo. Ví dụ then() phía trên return về một Promise Rejected thì then() phía dưới sẽ nhận một trang thái Rejected.
+    </b>
+</p>
 <script language="javascript">
     var promise = new Promise(function (resole, reject) {
         reject();
