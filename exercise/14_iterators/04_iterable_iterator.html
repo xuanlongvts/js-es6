@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iterable And Iterator</title>
+</head>
+<body>
+<h1>Iterable And Iterator</h1>
+<script language="javascript">
+    var array = ['a','b','c'];
+
+    // Array
+    console.log('***** Lặp qua các phần tử Array Array Array *****');
+    for(let x of array){
+        console.log(x);
+    }
+
+    console.log('***** Sử dụng next *****');
+    let iterable = array[Symbol.iterator]();
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+    console.log(iterable.next());
+
+    // Map
+    let map = new Map()
+            .set('a',1)
+            .set('b',2);
+    console.log('***** Lặp qua các phần tử Map Map Map *****');
+    for(let pair of map){
+        console.log(pair);
+    }
+    console.log('***** Sử dụng next *****');
+    let iterable1 = map[Symbol.iterator]();
+    console.log(iterable1.next());
+    console.log(iterable1.next());
+    console.log(iterable1.next());
+
+    // Set
+    let set = new Set()
+            .add('a')
+            .add('b');
+    console.log('***** Lặp qua các phần tử Set Set Set *****');
+    for(let x of set){
+        console.log(x);
+    }
+    console.log('***** Sử dụng next *****');
+    let iterable2 = set[Symbol.iterator]();
+    console.log(iterable2.next());
+    console.log(iterable2.next());
+    console.log(iterable2.next());
+
+    // Arguments
+    function printArgs() {
+        console.log('========================================');
+        console.log('***** Lặp qua các phần tử *****');
+        for(let x of arguments){
+            console.log(x);
+        }
+
+        console.log('***** Sử dụng next *****');
+        var iterable = arguments[Symbol.iterator]();
+        console.log(iterable.next());
+        console.log(iterable.next());
+        console.log(iterable.next());
+    }
+    printArgs('a','b');
+</script>
+</body>
+</html>

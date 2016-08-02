@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toán tử</title>
+</head>
+<body>
+<h1>Toán tử</h1>
+<script language="javascript">
+    var arr = ['a','b','c'];
+    console.log('Liệt kê');
+    console.log(...arr);
+
+    console.log('Bổ sung');
+    var new_arr = [...arr, 'd', 'e'];
+    console.log(...new_arr);
+
+    // Sử dụng với Map
+    console.log('Liệt kê Map map map');
+    let map = new Map()
+            .set('a',1)
+            .set('b',2);
+    console.log(...map);
+
+    console.log('Bổ sung');
+    let new_map = new Map([...map])
+            .set('d',3)
+            .set('e',4);
+    console.log(...new_map);
+
+    // Sử dụng với Set
+    console.log('====================');
+    console.log('Liệt kê Set Set Set');
+    let set = new Set()
+            .add('a')
+            .add('b');
+    console.log(...set);
+
+    console.log('Bổ sung');
+    let new_set = new Set([...set])
+            .add('c')
+            .add('d');
+    console.log(...new_set);
+</script>
+</body>
+</html>
