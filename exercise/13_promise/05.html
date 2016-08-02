@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise</title>
+</head>
+<body>
+<h1>Promise</h1>
+<p>
+    Việc đặt thứ tự các phương thức rất quan trọng nhé các bạn. Nếu hành động của promise trả về là một Reject thì sẽ có hai trường hợp xảy ra như sau: <br /><br />
+
+    <b>Trường hợp 1:</b> Nếu trong phương thức then() nào đó có sử dụng callback function Reject thì các phương thức then() ở phía sau sẽ là một Fulfilled, nghĩa là nó sẽ chạy ở callback function Resolve.
+</p>
+<p>
+    Nếu chiếu theo quy luật thì ở biến promise mình đã sử dụng Reject nên suy ra ở then() tham số callback thứ hai sẽ hoạt động. Điều này hoàn toàn đúng với phương thức then() thứ hai, vì vậy nó in ra chữ Xảy ra lỗi!. Tuy nhiên nhảy qua phương thức then() thứ tư thì nó lại chạy phần callback Resolve nên in ra số 3.
+</p>
+
+<p>
+    <b>Trường hợp 2:</b> Bạn sử dụng catch để bắt lỗi, lúc này chỉ có phương thức catch() là hoạt động.
+</p>
+<script language="javascript">
+    var promise = new Promise(function (resole, reject) {
+        reject();
+    });
+
+    promise
+            .then(function () {
+                console.log(1);
+            })
+            .then(
+                    function () {
+                        console.log(2);
+                    },
+                    function () {
+                        console.log('Xảy ra lỗi!');
+                    }
+            )
+            .then(function () {
+                console.log(3);
+            });
+
+    var promise1 = new Promise(function (resolve, reject) {
+        reject();
+    });
+    promise1
+            .then(function () {
+                console.log(1);
+            })
+            .then(function () {
+                console.log(2);
+            })
+            .then(function () {
+                console.log(3);
+            })
+            .catch(function () {
+                console.log('Error!');
+            })
+</script>
+</body>
+</html>

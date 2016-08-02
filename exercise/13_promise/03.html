@@ -12,6 +12,9 @@
 <p>
     Fulfilled còn được gọi là resolved, đây là trạng thái của Promise đã thành công, trạng thái này xảy ra khi bạn sử dụng resolve.
 </p>
+<p>
+    Rejected là trạng thái thao tác thất bại, trạng thái này xảy ra khi bạn sử dụng reject. Khi bạn sử dụng reject thì bắt buộc phải khai báo hành động xử lý cho nó (tức sử dụng then hoặc catch).
+</p>
 <script language="JavaScript">
     var proise = new Promise(function (resolve, reject) {
 
@@ -22,6 +25,14 @@
         resolve();
     });
     console.log(promise1);
+
+    var promise2 = new Promise(function (resolve, reject) {
+        reject();
+    });
+    promise2.catch(function () {
+
+    });
+    console.log(promise2);
 </script>
 </body>
 </html>
