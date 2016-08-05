@@ -21,5 +21,5 @@ module.exports = {
     stats: {
         colors: true
     },
-    devtool: 'source-map'
+    devtool: 'cheap-eval-source-map'
 };
