@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>let</title>
+</head>
+<body>
+<h1>let</h1>
+<script language="javascript">
+    function order(x, y) {
+        if(x > y){
+            let tmp = x;
+            x = y;
+            y = tmp;
+        }
+
+        console.log(tmp===x);
+        return [x,y];
+    }
+    order(3,5);
+</script>
+</body>
+</html>

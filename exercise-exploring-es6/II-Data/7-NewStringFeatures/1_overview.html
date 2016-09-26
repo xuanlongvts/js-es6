@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview</title>
+</head>
+<body>
+<h1>Overview</h1>
+<script language="javascript">
+    console.log('hello'.startsWith('hell'));
+    console.log('hello'.endsWith('ello'));
+    console.log('hello'.includes('ell'));
+    console.log('doo '.repeat(3));
+    console.log('=====================');
+
+    let first = 'Nong';
+    let last = 'No';
+    console.log(`Hello ${first} ${last}!`);
+
+    let multiLine = `
+        This is
+        a string
+        with multiple
+        lines
+    `;
+    console.log(multiLine);
+    console.log('=====================');
+
+    let raw = String.raw`Not a newline: \n`;
+    console.log(raw);
+    console.log(raw === 'Not a newline: \\n');
+
+</script>
+</body>
+</html>
