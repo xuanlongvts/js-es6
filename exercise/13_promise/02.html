@@ -8,13 +8,13 @@
 <h1>Promise</h1>
 <script language="javascript">
     var prom = new Promise(function (resolve, reject){
-        //resolve('Thành công nè!');
-        reject('Reject nè!');
+        resolve('Thành công nè!');
+        //reject('Reject nè!');
     });
 
     prom
             .then(
-                    function (mes) {
+                    function (mess) {
                         console.log('111');
                         console.log(mess);
                     },

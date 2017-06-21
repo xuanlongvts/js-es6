@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo thứ tự chạy của js (đồng bộ, bất đồng bộ)</title>
+</head>
+<body>
+<h1>Promise</h1>
+
+<script type="text/javascript">
+	var timeout = {
+		run: function(time){
+			var promise = new Promise(function(resolve, reject){
+				// đây là một mớ hành động nào đó chiếm vài chục mili giây,
+                // hay vài giây mà bạn chẳng biết nó sẽ xong lúc nào.
+
+				console.log('Start');
+				setTimeout(function(){
+					console.log('Text trong setTimeout');
+
+					time_2 = time * 2;
+
+					resolve(time_2);
+				}, time);
+			});
+			return promise;
+		}
+	};
+
+	timeout.run(3000).then(function(time){
+		console.log('Ket thuc');
+		console.log('Lay du lieu tu resolve tra ve: ', time);
+	});
+
+	// Nhìn thử nó cũng na ná cái fetch() rồi ha. Giờ phát triển đoạn code trên để dùng thêm 1 cái then nữa nha:
+
+
+</script>
+</body>
+</html>

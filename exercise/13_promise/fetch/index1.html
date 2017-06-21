@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fetch</title>
+</head>
+<body>
+<h1>Fetch</h1>
+<p>
+	Ở chỗ then_1, hàm text() của thằng response trả về một promise nữa. Để làm chi? Vì khi get cái trang github page về, mình muốn đọc HTML của nó thì cần một thời gian nữa để xử lý ĐỌC. Khi đọc xong, promise sẽ được chạy. Và cái then_2 được thực thi, nhận tham số là htmlText - tức cái mà hàm text() xử lý xong trả về.
+</p>
+<script type="text/javascript">
+	fetch("https://cosmospham.github.io", {
+		method: 'GET'
+	})
+	.then(function(response){
+			// gọi đây là then_1
+			// mừng quá có response rồi
+			// chú ý chỗ return này nhé
+		console.log('success');
+		return response.text();
+	})
+	.then(function(htmlText){
+			// then_2
+		console.log('then 2');
+		console.log(htmlText);
+	})
+	.catch(function(err){
+		console.log('err: ', err);
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo thứ tự chạy của js (đồng bộ, bất đồng bộ)</title>
+</head>
+<body>
+<h1>Promise</h1>
+
+<script type="text/javascript">
+	var timeout = {
+		run: function(time){
+			var promise = new Promise(function(resolve, reject){
+				// đây là một mớ hành động nào đó chiếm vài chục mili giây,
+                // hay vài giây mà bạn chẳng biết nó sẽ xong lúc nào.
+
+				console.log('Start');
+				setTimeout(function(){
+					console.log('Text trong setTimeout');
+
+					time_2 = time * 2;
+
+					resolve(time_2);
+				}, time);
+			});
+			return promise;
+		}
+	};
+
+	result = timeout.run(2000).then(function(time){
+		console.log('Ket thuc');
+
+		console.log('Lay time: ', time);
+		console.log('============');
+
+		return timeout.run(time);
+	});
+
+	result.then(function(new_time){
+		console.log('New time moi: ', new_time);
+	});
+</script>
+</body>
+</html>

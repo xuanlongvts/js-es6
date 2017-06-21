@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fetch</title>
+</head>
+<body>
+<h1>Fetch</h1>
+<script type="text/javascript">
+	fetch("https://cosmospham.github.io", {
+		method: 'GET'
+	})
+	.then(function(response){
+		console.log('success');
+		console.log(response);
+	})
+	.catch(function(err){
+		console.log('error');
+		console.log(err);
+	});
+</script>
+</body>
+</html>

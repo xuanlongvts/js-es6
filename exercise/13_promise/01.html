@@ -12,19 +12,21 @@
 <script language="JavaScript">
     var promise = new Promise(function (resolve, reject) {
         //resolve('Thành công');
-        reject('Lỗi');
+        reject('Promise 1 (Lỗi)');
     });
     promise.then(
             function (succ) {
+                console.log('Promise 1 (Thành công)');
                 console.log(succ);
             },
             function (err) {
+                console.log('Promise 1 (Xảy ra lỗi)');
                 console.log(err);
             }
     );
 
     var prom = new Promise(function (resolve, reject) {
-        reject('Reject nè!');
+        reject('Promise 2 (Reject nè!)');
     });
     prom
             .then(
@@ -34,7 +36,7 @@
                     }
             )
             .catch(function (mess) {
-                console.log('Vào hàm Catch');
+                console.log('Promise (Vào hàm Catch)');
                 console.log(mess);
             });
 </script>

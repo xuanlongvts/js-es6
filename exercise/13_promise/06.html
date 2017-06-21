@@ -43,11 +43,13 @@
     */
 
     var promise = new Promise(function (resolve, reject) {
-        reject();
+        resolve();
+        //reject();
     });
     promise
             .then(function () {
                 return new Promise(function (resolve, reject) {
+                    //resolve();
                     reject();
                 });
             })

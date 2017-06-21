@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Demo thứ tự chạy của js (đồng bộ, bất đồng bộ)</title>
+</head>
+<body>
+<h1>Promise</h1>
+
+<script type="text/javascript">
+	var timeout = {
+		run: function(time){
+			var promise = new Promise(function(resolve, reject){
+				// đây là một mớ hành động nào đó chiếm vài chục mili giây,
+                // hay vài giây mà bạn chẳng biết nó sẽ xong lúc nào.
+
+				console.log('Start');
+				setTimeout(function(){
+					console.log('Text trong setTimeout');
+					resolve();
+				}, time);
+			});
+			return promise;
+		}
+	};
+
+	timeout.run(3000).then(function(){
+		console.log('Ket thuc');
+	});
+
+	// Trong quá trình xử lý, như get cái URL, mình nhận được response, vậy làm sao lấy ra xài trong then?
+
+
+</script>
+</body>
+</html>

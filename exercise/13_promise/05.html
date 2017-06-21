@@ -29,7 +29,8 @@
     </b>
 </p>
 <script language="javascript">
-    var promise = new Promise(function (resole, reject) {
+    var promise = new Promise(function (resolve, reject) {
+        //resolve();
         reject();
     });
 
@@ -43,24 +44,30 @@
                     },
                     function () {
                         console.log('Xảy ra lỗi!');
+                    },
+                    function () {
+                        console.log('Hùm bà lằng');
                     }
             )
             .then(function () {
                 console.log(3);
             });
 
+    console.log('============');
+
     var promise1 = new Promise(function (resolve, reject) {
-        reject();
+        resolve();
+        //reject();
     });
     promise1
             .then(function () {
-                console.log(1);
+                console.log(4);
             })
             .then(function () {
-                console.log(2);
+                console.log(5);
             })
             .then(function () {
-                console.log(3);
+                console.log(6);
             })
             .catch(function () {
                 console.log('Error!');
